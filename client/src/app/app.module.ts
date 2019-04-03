@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { CustomMaterialModule } from './modules/custom-material.module';
 import { ToolboxComponent } from './toolbox/toolbox.component';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { ToolboxComponent } from './toolbox/toolbox.component';
     ToolboxComponent
   ],
   imports: [
-    BrowserModule
+    CustomMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

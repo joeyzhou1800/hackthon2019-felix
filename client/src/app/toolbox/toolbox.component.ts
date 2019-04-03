@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolboxComponent implements OnInit {
 
+  images = ['+', '-'];
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeImage() {
   }
 
 }
