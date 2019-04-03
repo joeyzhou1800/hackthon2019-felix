@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlPointsService } from '../services/control-points.service';
 
 @Component({
   selector: 'app-canvas',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanvasComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public controlPoints: ControlPointsService,
+  ) { }
 
   ngOnInit() {
   }

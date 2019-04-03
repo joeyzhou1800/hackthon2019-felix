@@ -1,9 +1,8 @@
 <div fxFlex="1 1 auto" fxLayout="row" fxLayoutGap="4px" class="pl-panel">
   <mat-form-field floatLabel="never" class="field">
     <mat-select
-      placeholder="Image"
-      [(value)]="image"
-      (selectionChange)="changeImage();">
+      placeholder="Select an image"
+      [(value)]="controlPoints.image">
       <mat-option *ngFor="let image_name of images||[]"
         [value]="image_name">
         {{image_name}}

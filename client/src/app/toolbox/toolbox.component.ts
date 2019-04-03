@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../services/backend.service';
+import { ControlPointsService } from '../services/control-points.service';
 
 @Component({
   selector: 'app-toolbox',
@@ -7,14 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolboxComponent implements OnInit {
 
-  images = ['+', '-'];
+  images: string[];
   
-  constructor() { }
+  constructor(
+    public backend: BackendService,
+    public controlPoints: ControlPointsService,
+  ) {
+    this.getImageList();
+  }
 
   ngOnInit() {
   }
 
-  changeImage() {
+  getImageList() {
+    this.backend.get('/images/')
+      .subscribe((response) => {
+        this.images = response['metadata']['images'];
+      });
   }
-
 }
