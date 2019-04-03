@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material'
+
 import { BackendService } from '../services/backend.service';
 import { ControlPointsService } from '../services/control-points.service';
 

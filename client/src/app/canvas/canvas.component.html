@@ -1,4 +1,27 @@
-<p>
-  canvas works!
-  {{ controlPoints.image }}
-</p>
+<div
+  class="flat-viewer mr-buttoncard"
+  (dblclick)="onDblClick($event);">
+  <svg
+    class="linesvg"
+    width="100%"
+    height="100%"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <ng-container *ngFor="let point of controlPoints.solidPoints">
+        <circle [attr.cx]="point[0] * ratio" [attr.cy]="point[1] * ratio" r="5"
+        >
+        </circle>
+      </ng-container>
+      <ng-container *ngFor="let point of controlPoints.hollowPoints">
+        <circle
+          [attr.cx]="point[0] * ratio" [attr.cy]="point[1] * ratio" r="5"
+          stroke="black" stroke-width="1" fill="none">
+        </circle>
+      </ng-container>
+      <path [attr.d]="svgPath()" fill="none" stroke="black" stroke-width="2" /> 
+    </g>
+  </svg>
+  <img class="backimage" [src]="getImageUrl()" alt="Please select an image.">
+  <ng-keyboard-shortcuts [shortcuts]="shortcuts"></ng-keyboard-shortcuts>
+</div>
