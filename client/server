@@ -1,0 +1,18 @@
+#!/bin/bash
+
+RUN_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+PROJ_DIR=$(cd $RUN_DIR && cd .. && pwd)
+
+case $1 in
+    build)
+        PROJ_DIR=$PROJ_DIR\
+        docker-compose -f $RUN_DIR/docker-compose.yml build
+    ;;
+    up)
+        PROJ_DIR=$PROJ_DIR\
+        docker stack deploy -c $RUN_DIR/docker-compose.yml hackathon
+    ;;
+    rm)
+        docker stack rm hackathon
+    ;;
+esac

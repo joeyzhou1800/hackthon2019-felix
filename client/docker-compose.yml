@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: arterys/hackathon2019_client-dev:1.0
+    ports:
+      - "80:4200"
+    volumes:
+      - $PROJ_DIR/client:/client
+      - node-modules:/client/node_modules
+
+  mongo:
+    image: mongo:3
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  node-modules:
+  mongo-data:
