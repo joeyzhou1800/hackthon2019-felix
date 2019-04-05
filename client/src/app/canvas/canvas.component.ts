@@ -85,7 +85,7 @@ export class CanvasComponent implements AfterViewInit {
   }
   bezierCommand(point, i, a){
     // start control point
-    const [cpsX, cpsY] = this.controlPoint(a[i - 1], a[i - 2], point)
+    const [cpsX, cpsY] = this.controlPoint(a[i - 1], a[i - 2], point, false)
     // end control point
     const [cpeX, cpeY] = this.controlPoint(point, a[i - 1], a[i + 1], true)
     return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`

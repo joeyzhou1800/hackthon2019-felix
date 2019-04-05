@@ -5,7 +5,7 @@ import { BackendService } from '../services/backend.service';
   providedIn: 'root'
 })
 export class ControlPointsService {
-  
+
   image: string;
   solidPoints: any = [];
   hollowPoints: any = [];
@@ -37,9 +37,9 @@ export class ControlPointsService {
     for (let i = 0; i < this.solidPoints.length; i++) {
       points.push({'x': this.solidPoints[i][0], 'y': this.solidPoints[i][1]});
     }
+    console.info("request", points);
     this.backend.post('/control_points/' + this.image, {'controlpoints': {'points': points}})
       .subscribe((response) => {
-        console.info("request", points);
         console.info("response", response);
         this.hollowPoints.length = 0;
         let points = response['metadata']['points'];
