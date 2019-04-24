@@ -16,7 +16,7 @@ import { ControlPointsService } from '../services/control-points.service';
 })
 export class CanvasComponent implements AfterViewInit {
 
-  ratio = 10;
+  ratio = 5;
   shortcuts: ShortcutInput[] = [];
 
   constructor(
@@ -25,7 +25,7 @@ export class CanvasComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.shortcuts.push({
-      key: ["cmd + e"],
+      key: ["tab"],
       label: "Auto complete",
       description: "Auto complete",
       command: () => this.controlPoints.autoFill(),

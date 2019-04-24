@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // serverUrl: 'http://35.199.188.146:5500',
-  serverUrl: 'http://35.197.84.208:5500',
+  // serverUrl: 'http://35.197.84.208:5500',
+  serverUrl: 'http://35.230.94.120:5500',
 };
 
 /*

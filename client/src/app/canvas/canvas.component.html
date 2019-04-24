@@ -1,6 +1,6 @@
 <div
   class="flat-viewer mr-buttoncard"
-  (dblclick)="onDblClick($event);">
+  (click)="onDblClick($event);">
   <svg
     class="linesvg"
     width="100%"
@@ -10,16 +10,17 @@
     <g>
       <ng-container *ngFor="let point of controlPoints.solidPoints">
         <circle [attr.cx]="point[0] * ratio" [attr.cy]="point[1] * ratio" r="5"
+         fill="white"
         >
         </circle>
       </ng-container>
       <ng-container *ngFor="let point of controlPoints.hollowPoints">
         <circle
           [attr.cx]="point[0] * ratio" [attr.cy]="point[1] * ratio" r="5"
-          stroke="black" stroke-width="1" fill="none">
+          stroke="white" stroke-width="1" fill="none">
         </circle>
       </ng-container>
-      <path [attr.d]="svgPath()" fill="none" stroke="black" stroke-width="2" /> 
+      <path [attr.d]="svgPath()" fill="none" stroke="white" stroke-width="2" />
     </g>
   </svg>
   <img class="backimage" [src]="getImageUrl()" alt="Please select an image.">
